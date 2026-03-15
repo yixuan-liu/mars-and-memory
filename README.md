@@ -1,4 +1,4 @@
-# Scrollytelling Artifact Gallery
+# Mars and Memory
 
 An immersive, interactive web experience built with Next.js and Framer Motion. This project creates a "scrollytelling" journey to explore high-resolution historical artifacts through scroll-driven deep zooms, panning cameras, and narrative text reveals.
 
@@ -7,13 +7,14 @@ This repository is structured as a **Turborepo Monorepo** to facilitate code sha
 ## 🏗 Repository Structure
 
 ```text
-scrollytelling-demo/
+mars-and-memory/
 ├── apps/
 │   ├── web/       # Next.js web application
 │   └── mobile/    # React Native / Expo mobile application
 ├── packages/
 │   ├── api/       # API client (fetch + Zod)
 │   ├── config/    # Shared configurations (ESLint, TS, etc.)
+│   ├── db/        # Supabase client wrapper and database types
 │   ├── types/     # Shared Zod schemas and TypeScript definitions
 │   └── ui/        # Shared platform-aware React components
 ```
