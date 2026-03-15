@@ -38,7 +38,7 @@ export function getBaseUrl() {
  * Usage:
  * ```ts
  * import { z } from "zod";
- * import { createGetter } from "@acme/api";
+ * import { createGetter } from "@mars-memory/api";
  *
  * const UserSchema = z.object({ id: z.string(), name: z.string() });
  * const getUsers = createGetter("/users", z.array(UserSchema));

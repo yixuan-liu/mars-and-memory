@@ -1,5 +1,5 @@
 {
-  "name": "@acme/api",
+  "name": "@mars-memory/api",
   "version": "0.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -12,11 +12,11 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@acme/types": "workspace:*",
+    "@mars-memory/types": "workspace:*",
     "zod": "^3"
   },
   "devDependencies": {
-    "@acme/config": "workspace:*",
+    "@mars-memory/config": "workspace:*",
     "typescript": "^5"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@acme/db",
+  "name": "@mars-memory/db",
   "version": "0.1.0",
   "private": true,
   "main": "./src/index.ts",
@@ -10,7 +10,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@acme/config": "workspace:*",
+    "@mars-memory/config": "workspace:*",
     "typescript": "^5"
   }
 }

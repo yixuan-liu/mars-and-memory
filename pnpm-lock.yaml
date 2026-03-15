@@ -32,30 +32,30 @@ importers:
 
   apps/mobile:
     dependencies:
-      '@acme/db':
+      '@mars-memory/db':
         specifier: workspace:*
         version: link:../../packages/db
 
   apps/web:
     dependencies:
-      '@acme/api':
-        specifier: workspace:*
-        version: link:../../packages/api
-      '@acme/db':
-        specifier: workspace:*
-        version: link:../../packages/db
-      '@acme/types':
-        specifier: workspace:*
-        version: link:../../packages/types
-      '@acme/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       '@heroicons/react':
         specifier: ^2.2.0
         version: 2.2.0(react@19.2.3)
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.10.0(react-hook-form@7.71.2(react@19.2.3))
+      '@mars-memory/api':
+        specifier: workspace:*
+        version: link:../../packages/api
+      '@mars-memory/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@mars-memory/types':
+        specifier: workspace:*
+        version: link:../../packages/types
+      '@mars-memory/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@radix-ui/react-accordion':
         specifier: ^1.1.2
         version: 1.2.12(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -102,14 +102,14 @@ importers:
 
   packages/api:
     dependencies:
-      '@acme/types':
+      '@mars-memory/types':
         specifier: workspace:*
         version: link:../types
       zod:
         specifier: ^3
         version: 3.25.76
     devDependencies:
-      '@acme/config':
+      '@mars-memory/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -140,7 +140,7 @@ importers:
         specifier: ^3.23.8
         version: 3.25.76
     devDependencies:
-      '@acme/config':
+      '@mars-memory/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -153,7 +153,7 @@ importers:
         specifier: ^3
         version: 3.25.76
     devDependencies:
-      '@acme/config':
+      '@mars-memory/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -166,7 +166,7 @@ importers:
         specifier: '>=18'
         version: 19.2.3
     devDependencies:
-      '@acme/config':
+      '@mars-memory/config':
         specifier: workspace:*
         version: link:../config
       '@types/react':

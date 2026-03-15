@@ -3,11 +3,11 @@ import type {
   RelatedContent,
   CollectionCarouselItem,
   CarouselItem,
-} from '@acme/types';
+} from '@mars-memory/types';
 
 // Re-export types so existing imports still work
-export type { ExhibitData, RelatedContent, CollectionCarouselItem, CarouselItem } from '@acme/types';
-export type { RelatedTheme, RelatedStory } from '@acme/types';
+export type { ExhibitData, RelatedContent, CollectionCarouselItem, CarouselItem } from '@mars-memory/types';
+export type { RelatedTheme, RelatedStory } from '@mars-memory/types';
 
 // ==========================================
 // EXPORTED DATA ARRAYS & OBJECTS
