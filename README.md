@@ -2,39 +2,56 @@
 
 An immersive, interactive web experience built with Next.js and Framer Motion. This project creates a "scrollytelling" journey to explore high-resolution historical artifacts through scroll-driven deep zooms, panning cameras, and narrative text reveals.
 
+This repository is structured as a **Turborepo Monorepo** to facilitate code sharing across platforms.
+
+## 🏗 Repository Structure
+
+```text
+scrollytelling-demo/
+├── apps/
+│   ├── web/       # Next.js web application
+│   └── mobile/    # React Native / Expo mobile application
+├── packages/
+│   ├── api/       # API client (fetch + Zod)
+│   ├── config/    # Shared configurations (ESLint, TS, etc.)
+│   ├── types/     # Shared Zod schemas and TypeScript definitions
+│   └── ui/        # Shared platform-aware React components
+```
+
 ## ✨ Features
 
-- **Scroll-Driven Narrative:** Utilizes Framer Motion's `useScroll` and `useTransform` to map user scroll progress directly to CSS properties (scale, opacity, translation).
-- **Cinematic "Cloaking" Transitions:** Sections seamlessly slide over previous ones using a `-100vh` overlapping margin architecture, creating a physical "stacking" feel.
-- **Deep-Zoom Panning:** Specialized `<PanExhibitSection />` components allow the camera to zoom in and pan across high-res images to inspect fine details like collar lace dimensions and button arrangements.
-- **Smart Navigation:** Includes interactive, bouncing Heroicon UI overlays that allow users to seamlessly click to the next or previous historical era.
+- **Scroll-Driven Narrative:** Uses Framer Motion's `useScroll` and `useTransform` to map scroll progress to CSS properties.
+- **Cinematic Transitions:** Sections slide over previous ones using a overlapping margin architecture.
+- **Deep-Zoom Panning:** Specialized components allow zooming and panning across high-res images.
+- **Monorepo Architecture:** Clean separation of concerns with shared UI, types, and API packages.
 
 ## 🛠 Tech Stack
 
-- **Framework:** [Next.js](https://nextjs.org/) (App Router, React 18)
-- **Language:** TypeScript
-- **Animation:** [Framer Motion](https://www.framer.com/motion/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Icons:** [@heroicons/react](https://heroicons.com/)
+- **Framework:** Next.js (App Router), React Native
+- **Monorepo Tooling:** Turborepo, pnpm workspaces
+- **Language & Validation:** TypeScript, Zod
+- **Animation:** Framer Motion
+- **Styling:** Tailwind CSS
 
 ## 🚀 Getting Started
 
-Install the dependencies:
+This project STRICTLY uses `pnpm` as its package manager.
 
-```bash
-npm install
-```
+1. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
 
-Start the development server:
+2. **Start the development server:**
+   ```bash
+   pnpm run dev
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. **Other Useful Commands:**
+   ```bash
+   pnpm run build       # Build all apps and packages
+   pnpm run lint        # Run linting across the monorepo
+   pnpm run type-check  # Run type checking
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the web app locally.
