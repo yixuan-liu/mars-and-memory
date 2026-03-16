@@ -1,0 +1,28 @@
+{
+  "name": "@mars-memory/ui",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.web.tsx",
+  "types": "./src/index.web.tsx",
+  "exports": {
+    ".": {
+      "react-native": "./src/index.native.tsx",
+      "default": "./src/index.web.tsx"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@mars-memory/config": "workspace:*",
+    "@types/react": "^19",
+    "typescript": "^5"
+  }
+}

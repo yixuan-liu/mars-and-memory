@@ -1,0 +1,8 @@
+{
+  "name": "@mars-memory/mobile",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@mars-memory/db": "workspace:*"
+  }
+}

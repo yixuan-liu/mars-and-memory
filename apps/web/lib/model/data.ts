@@ -1,56 +1,13 @@
-// Define the shape of your Main Exhibit Data
-export interface ExhibitData {
-  id: string;
-  title: string;
-  description: string;
-  detailText?: string;
-  imageSrc: string;
-}
+import type {
+  ExhibitData,
+  RelatedContent,
+  CollectionCarouselItem,
+  CarouselItem,
+} from '@mars-memory/types';
 
-// Define the shape of your Related Stories Data
-export interface RelatedTheme {
-  title: string;
-  subtitle: string;
-  thumbnail: string;
-  url: string;
-}
-
-export interface RelatedStory {
-  id: string;
-  title: string;
-  subtitle: string;
-  thumbnail: string;
-  type: string;
-  url: string;
-}
-
-export interface RelatedContent {
-  theme: RelatedTheme;
-  partner: string;
-  stories: RelatedStory[];
-}
-
-// ==========================================
-// Mock data interface for the collection carousel component
-// ==========================================
-export interface CollectionCarouselItem {
-  id: string | number;
-  title: string;
-  era: string;
-  description: string;
-  imageUrl?: string;
-  color?: string;
-}
-
-// ==========================================
-// Mock data interface for the exhibit carousel component
-// ==========================================
-export interface CarouselItem {
-  id: string;
-  title: string;
-  description: string;
-  imageSrc: string;
-}
+// Re-export types so existing imports still work
+export type { ExhibitData, RelatedContent, CollectionCarouselItem, CarouselItem } from '@mars-memory/types';
+export type { RelatedTheme, RelatedStory } from '@mars-memory/types';
 
 // ==========================================
 // EXPORTED DATA ARRAYS & OBJECTS
