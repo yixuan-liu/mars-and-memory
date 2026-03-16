@@ -1,4 +1,4 @@
-# @acme/mobile
+# @mars-memory/mobile
 
 React Native app placeholder. Initialize with Expo or React Native CLI when ready:
 
