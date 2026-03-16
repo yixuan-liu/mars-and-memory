@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "type-check": "tsc --noEmit",
-    "clean": "rimraf .next"
+    "clean": "rm -rf .next"
   },
   "dependencies": {
     "@mars-memory/api": "workspace:*",
