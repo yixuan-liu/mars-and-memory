@@ -8,15 +8,15 @@
     "start": "next start",
     "lint": "eslint",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf .next"
+    "clean": "rimraf .next"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@hookform/resolvers": "^3.9.1",
     "@mars-memory/api": "workspace:*",
     "@mars-memory/db": "workspace:*",
     "@mars-memory/types": "workspace:*",
     "@mars-memory/ui": "workspace:*",
-    "@heroicons/react": "^2.2.0",
-    "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "framer-motion": "^12.36.0",
     "next": "16.1.6",
@@ -31,6 +31,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "rimraf": "^6.1.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

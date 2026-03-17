@@ -15,7 +15,7 @@
     "lint": "eslint .",
     "test": "vitest run --passWithNoTests",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rimraf dist"
   },
   "peerDependencies": {
     "react": ">=18"
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@mars-memory/config": "workspace:*",
     "@types/react": "^19",
+    "rimraf": "^6.1.3",
     "typescript": "^5"
   }
 }
