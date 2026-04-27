@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@mars-memory/config": "workspace:*",
+    "rimraf": "^6.1.3",
     "typescript": "^5"
   }
 }

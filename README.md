@@ -10,7 +10,8 @@ This repository is structured as a **Turborepo Monorepo** to facilitate code sha
 mars-and-memory/
 ├── apps/
 │   ├── web/       # Next.js web application
-│   └── mobile/    # React Native / Expo mobile application
+│   ├── mobile/    # React Native / Expo mobile application
+│   └── docs/      # Nextra documentation site
 ├── packages/
 │   ├── api/       # API client (fetch + Zod)
 │   ├── config/    # Shared configurations (ESLint, TS, etc.)
@@ -55,4 +56,4 @@ This project STRICTLY uses `pnpm` as its package manager.
    pnpm run type-check  # Run type checking
    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the web app locally.
+Open [http://localhost:3000](http://localhost:3000) for the web app and [http://localhost:3001](http://localhost:3001) for the docs site.
