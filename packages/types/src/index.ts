@@ -56,3 +56,8 @@ export const CarouselItemSchema = z.object({
   imageSrc: z.string(),
 });
 export type CarouselItem = z.infer<typeof CarouselItemSchema>;
+
+// ==========================================
+// Agent / AI Pipeline Types
+// ==========================================
+export * from "./agent.js";

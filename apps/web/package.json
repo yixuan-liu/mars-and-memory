@@ -13,6 +13,7 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^3.9.1",
+    "@mars-memory/ai-core": "workspace:*",
     "@mars-memory/api": "workspace:*",
     "@mars-memory/db": "workspace:*",
     "@mars-memory/types": "workspace:*",
