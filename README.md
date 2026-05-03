@@ -1,62 +1,53 @@
 # Mars and Memory
 
-An immersive, AI-driven interactive web experience. This project combines a "scrollytelling" frontend journey (using Next.js and Framer Motion) with an advanced **DeepAgents** AI backend. The AI pipeline operates as a Coordinator-Worker system, autonomously analyzing, dating, and historically colorizing black-and-white military photographs.
+An immersive, AI-driven interactive web experience powered by **Antigravity's Autonomous AI Developer Pipeline**. 
 
-This repository is structured as a **Turborepo Monorepo** to facilitate code sharing across platforms and strict separation between the AI layer and the web app.
+This repository has been uniquely structured to support a Zero-Code, AI-orchestrated development lifecycle. The root directory acts as the control center for an automated team of specialized AI Agents, while the actual application source code resides in an isolated build directory.
 
 ## 🏗 Repository Structure
 
 ```text
 mars-and-memory/
-├── apps/
-│   ├── web/       # Next.js web application (Frontend & API Routes)
-│   ├── mobile/    # React Native / Expo mobile application
-│   └── docs/      # Nextra documentation site
-├── packages/
-│   ├── ai-core/   # 🧠 DeepAgents Coordinator-Worker architecture & Specialist subagents
-│   ├── api/       # API client (fetch + Zod)
-│   ├── config/    # Shared configurations (ESLint, TS, etc.)
-│   ├── db/        # Supabase client wrapper and database types
-│   ├── types/     # Shared Zod schemas and TypeScript definitions
-│   └── ui/        # Shared platform-aware React components
+├── .agents/                 # AI Orchestration Layer
+│   ├── agents.md            # Defines the AI personas (@pm, @engineer, @qa, @devops)
+│   ├── skills/              # Strict technical rules & tasks for each AI agent
+│   └── workflows/           # Custom slash commands (e.g., /startcycle)
+├── app_build/               # Application Source Code (Turborepo)
+│   ├── apps/                # Next.js web application & mobile app
+│   ├── packages/            # Shared AI core, DB clients, and UI components
+│   └── package.json         # Workspace configuration
+└── production_artifacts/    # AI-generated Technical Specifications
 ```
 
-## ✨ Features
+## 🤖 The Autonomous AI Pipeline
 
-- **Autonomous AI Colorization Pipeline (`ai-core`):** A robust multi-agent system powered by DeepAgents. A central Coordinator delegates tasks to 9 domain-specialist Subagents (Image Analysts, Historians, Prompt Engineers, etc.) to historically restore black-and-white photos.
-- **Stateful AI Sessions:** Built-in Checkpointers (LangGraph `MemorySaver`) and Middlewares for context summarization and persistent thread recovery.
-- **Scroll-Driven Narrative:** Uses Framer Motion's `useScroll` and `useTransform` to map scroll progress to CSS properties.
-- **Deep-Zoom Panning:** Specialized components allow zooming and panning across high-res historical artifacts.
-- **Monorepo Architecture:** Clean separation of concerns with shared UI, types, and standalone AI packages.
+This project is built using an AI-first development workflow. Instead of writing code manually, you guide specialized AI agents through a continuous development cycle:
 
-## 🛠 Tech Stack
+1. **Product Manager (@pm)**: Analyzes your ideas and writes robust technical specifications inside `production_artifacts/`. It waits for your explicit approval or inline rework comments.
+2. **Full-Stack Engineer (@engineer)**: Translates the approved spec into code and scaffolds it directly into `app_build/`.
+3. **QA Engineer (@qa)**: Audits the generated code, fixes logic breaks, and resolves missing dependencies.
+4. **DevOps Master (@devops)**: Intelligently packages the app and runs the local development servers.
 
-- **Framework:** Next.js (App Router), React Native
-- **AI / Agents:** [DeepAgents](https://docs.langchain.com/oss/javascript/deepagents/overview), LangGraph, LangChain
-- **Monorepo Tooling:** Turborepo, pnpm workspaces
-- **Language & Validation:** TypeScript, Zod
-- **Animation:** Framer Motion
-- **Styling:** Tailwind CSS
+### How to use it
 
-## 🚀 Getting Started
-
-This project STRICTLY uses `pnpm` as its package manager.
-
-1. **Install dependencies:**
+Trigger the entire automated pipeline directly inside your Antigravity IDE:
+1. Open the Agent Manager chat.
+2. Run the custom workflow command with your idea:
    ```bash
-   pnpm install
+   /startcycle "I want to add a dark mode toggle to the top navigation bar."
    ```
+3. Wait for the PM to generate the spec in `production_artifacts/Technical_Specification.md`.
+4. Review the spec, add comments if necessary, and approve it.
+5. Watch the AI team autonomously build, audit, and deploy your new feature!
 
-2. **Start the development server:**
-   ```bash
-   pnpm run dev
-   ```
+## 💻 Manual Development
 
-3. **Other Useful Commands:**
-   ```bash
-   pnpm run build       # Build all apps and packages
-   pnpm run lint        # Run linting across the monorepo
-   pnpm run type-check  # Run type checking
-   ```
+If you prefer to write code manually or run the application yourself, navigate to the `app_build/` directory.
 
-For detailed AI architecture documentation, see [`packages/ai-core/docs/architecture.md`](packages/ai-core/docs/architecture.md).
+```bash
+cd app_build
+pnpm install
+pnpm run dev
+```
+
+For detailed architectural information on the application itself, refer to the code inside `app_build/packages/ai-core/`.
