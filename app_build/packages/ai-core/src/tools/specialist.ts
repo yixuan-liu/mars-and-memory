@@ -31,7 +31,7 @@ export function createAnalyzePhotographTool(deps: SpecialistToolDeps) {
         "You are an expert military uniform historian. Analyze photographs with extreme precision. " +
         "Focus on: rank insignia, uniform cut, collar style, buttons, accoutrements, headwear, and period-indicating features."
       );
-      const userMsg = createVisionMessage(
+      const userMsg = await createVisionMessage(
         "Analyze this black-and-white military photograph. Return a JSON object with keys: " +
         "uniformDescription (string), visibleFeatures (string[]), imageQuality ('low'|'medium'|'high').",
         { type: "url", url: imageUrl },

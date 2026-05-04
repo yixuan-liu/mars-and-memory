@@ -67,7 +67,7 @@ export async function runImageAnalysisAgent(
       "You are an expert military uniform historian. Analyze photographs with precision."
     );
 
-    const userMsg = createVisionMessage(
+    const userMsg = await createVisionMessage(
       "Analyze this black-and-white photograph. Describe the military uniform in detail: visible rank insignia, cut, collar style, buttons, accoutrements, headwear, and any period-indicating features. Return a JSON object with keys: uniformDescription (string), visibleFeatures (string[]), imageQuality ('low'|'medium'|'high').",
       imageInput,
     );

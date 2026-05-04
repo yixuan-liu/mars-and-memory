@@ -142,16 +142,24 @@ type LCContentPart = MessageContentText | MessageContentImageUrl;
 
 /**
  * Build a multimodal HumanMessage with text + image.
- * Works with OpenAI (image_url), Gemini (inlineData via LangChain adapter), and Ollama (llava).
+ * Works universally by converting URLs to base64 data URLs,
+ * which are supported by OpenAI, Gemini, and Anthropic.
  */
-export function createVisionMessage(
+export async function createVisionMessage(
   text: string,
   image: { type: "url"; url: string } | { type: "base64"; data: string; mimeType: string },
-): HumanMessage {
+): Promise<HumanMessage> {
   const parts: LCContentPart[] = [];
 
   if (image.type === "url") {
-    parts.push({ type: "image_url", image_url: { url: image.url } });
+    // Fetch and convert to base64 since some providers (e.g. Gemini) strictly require data URLs
+    const res = await fetch(image.url);
+    if (!res.ok) throw new Error(`Failed to fetch image: ${res.statusText}`);
+    const arrayBuffer = await res.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const mimeType = res.headers.get("content-type") || "image/jpeg";
+    const dataUrl = `data:${mimeType};base64,${buffer.toString("base64")}`;
+    parts.push({ type: "image_url", image_url: { url: dataUrl } });
   } else {
     parts.push({
       type: "image_url",

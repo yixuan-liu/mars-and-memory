@@ -61,8 +61,23 @@ export function createDatabaseTools(deps: DatabaseToolDeps): Pick<
 export function makeNoOpDbAdapter(): DatabaseToolDeps {
   return {
     vectorSearch: async (_query, _topK) => {
-      console.warn("[db:stub] vectorSearch called — returning empty results");
-      return [];
+      console.warn("[db:stub] vectorSearch called — returning mock result");
+      return [{
+        uniformId: "mock-uniform-123",
+        period: "1905-1957",
+        country: "Norway",
+        branch: "Navy",
+        rank: "Admiral",
+        colors: [
+          { component: "tunic", colorHex: "#000080", colorName: "Navy Blue", confidence: 0.95, source: "mock-db" },
+          { component: "epaulettes", colorHex: "#FFD700", colorName: "Gold", confidence: 0.9, source: "mock-db" }
+        ],
+        metadata: {
+          sources: ["mock-db"],
+          lastUpdated: new Date().toISOString(),
+          schemaVersion: "1.0"
+        }
+      }];
     },
     upsertUniformSchema: async (schema) => {
       console.warn("[db:stub] upsertUniformSchema called", schema.uniformId);
